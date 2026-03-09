@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .bold{
+            font-weight: bold;
+            color: red;
+         }
+         #container{
+             width: 800px;
+             margin: 5px auto;
+         }
+         #contents{
+            width: 400px;
+            margin: 10px auto;
+            border: 2px solid gray;
+         }
+         div{
+            margin: 10px;
+         }
+         .center{
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+         }
+         .phone{
+            width: 40px;
+         }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2 class="center">지원 양식</h2>
+    </div>
+        <div id="container">
+            <div id="contents">
+                <div style="color: red; font-size: 15px;" >
+                *빨간색은 필수 입력사항입니다.
+                </div>
+            <div>
+                <span class="bold">이름 :</span>
+                <label><input type="text" placeholder="asd"></label>
+            </div>
+            <div>
+                학과 :
+                <label><input type="text" placeholder="asd"></label>
+            </div>
+            <div>
+                <span class="bold">연락처 : </span>
+                    <select>
+                        <option>010</option> 
+                        <option>011</option>
+                        <option>017</option>
+                    </select>
+                    -
+                    <input type="text" class="phone">
+                    -
+                    <input type="text"class="phone">
+            </div>
+            <div>
+                <span class="bold">성별 : </span>
+                <label><input type="radio" name="gender"> 남자 </label>
+                <label><input type="radio" name="gender"> 여자 </label>
+            </div>
+            <div>
+                관심 언어 :
+                <label><input type="checkbox" name="subject">자바</label>
+                <label><input type="checkbox" name="subject">파이썬</label>
+                <label><input type="checkbox" name="subject">C</label>
+                <label><input type="checkbox" name="subject">C#</label>
+                <label><input type="checkbox" name="subject">기타 언어</label>
+            </div>
+            <div>
+                <textarea rows="10" cols="48" placeholder="자기소개"></textarea>
+            </div>
+            <div class="center">
+                <button>가입하기</button>
+                <button>취소</button>
+            </div>
+            </div>
+        </div>
+</body>
+</html>
