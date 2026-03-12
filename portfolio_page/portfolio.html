@@ -136,13 +136,18 @@
             display: inline-block;
             position: absolute;
             left: 910px;
-            
+        }
+        #time-img{
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            left: 800px;
         }
 
     </style>
 </head>
 <body>
-    <div id="time"></div>
+    <div id="time-img">⏰지금 시각은? </div><div id="time"></div>
     <div id="container">
         <div id="leftbar">
             <div id="imgbox">
@@ -238,11 +243,11 @@
     setInterval(()=>{
         let datetime = new Date();
         let obj = document.querySelector("#time");
-        // 초가 한자리가 될때 01... 이렇게 나오게 하기
-        let sec = datetime.getSeconds() < 10 ? "0" +datetime.getSeconds() : datetime.getSeconds()
+        let second = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
         let time = datetime.getHours() + " : "
                     + datetime.getMinutes() + " : "
-                    + datetime.getSeconds();
+                    + second;
+
         obj.innerHTML = time;
-    },1000);
+    }, 1000);
 </script>
