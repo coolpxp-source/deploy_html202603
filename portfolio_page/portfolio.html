@@ -13,6 +13,7 @@
             background:radial-gradient(circle at 70% 50%,pink, white);
             box-sizing: border-box;
             /* position: relative; */
+
         }
         #leftbar{
             width: 300px;
@@ -60,6 +61,7 @@
             background-color: #fff1ca;
             border-radius: 50px;
             border: 1px solid white;
+            cursor: pointer;
         }
         #button:hover{
             background-color: #d7cbaa;
@@ -81,9 +83,10 @@
         .maintitle{
            font-size: 20px;
            font-weight: bold;
-           padding-bottom: 5px;
-           padding-left: 20px;
+           padding:0px 20px 5px 20px ;
            border-left: 8px solid pink;
+           background-color: #fff6fb;
+           display: inline-block;
         }
         .maintop{
             width: 630px;
@@ -106,8 +109,17 @@
             margin-top: 5px;
             margin-bottom: 30px;
         }
-        .bold{
+        .text-point{
             font-weight: bold;
+            background-color: pink;
+            display: inline-block;
+            padding: 0px 10px;
+        }
+        .bold-text{
+            font-weight: bold;
+        }
+        .color-text{
+            color: rgb(185, 0, 62);
         }
         .mainlast{
             width: 630px;
@@ -129,29 +141,39 @@
             font-size: 15px;
             background-color: #fff1ca;
         }
+    
         #time{
             width: 100px;
-            border: 2px solid pink;
+            border: 3px solid pink;
             border-radius: 10%;
             text-align: center;
             background-color: #fff1ca;
             display: inline-block;
             position: absolute;
-            left: 910px;
+            top: 10px;
+            left: 879px;
             font-weight: bold;
+        }
+        #title-emo{
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            left: 346px;
         }
         #time-img{
             display: inline-block;
             position: absolute;
             top: 10px;
-            left: 800px;
+            left: 854px;
         }
 
     </style>
 </head>
 <body>
-    <div id="time-img">⏰지금 시각은? </div><div id="time"></div>
+    
     <div id="container">
+        <div id="title-emo">🎀 좋은 하루 되세요 🎀</div>
+        <div id="time-img">⏰ </div><div id="time"></div>
         <div id="leftbar">
             <div id="imgbox">
             <div id="textname">Hyejin Ahn</div>
@@ -161,7 +183,7 @@
             <div class="subtext">🏡 Incheon, Korea</div>
             <div class="subtext">📫 elotoll@naver.com</div>
             <br>
-            <button id="button">🎁프로젝트 보러가기🎁</button>
+            <button id="button">🎁 프로젝트 보러가기 🎁</button>
             </div>
         </div>
         <div id="maincontents">
@@ -169,22 +191,22 @@
                 <div class="maintitle">소개글</div>
                 <div class="maintop">
                     <ul>
-                    <li>저는 이런 사람입니다. 어쩌고 블라블라블라</li>
-                    <li>이런 성향의 사람이고요. 짱짱 좋은 설명글</li>
+                    <li>저는 <span class="bold-text">이런 사람</span>입니다. 어쩌고 블라블라블라</li>
+                    <li>이런 <span class="bold-text">성향</span>의 사람이고요. 짱짱 좋은 설명글</li>
                     <li>한 줄 더 들어갈 듯</li>
                     </ul>
                 </div>
                 <div class="maintitle">Experience</div>
                 <div class="mainmiddle">
                     <ul>
-                    <span class="bold"><li>🏫 이런저런 대학교, 요래저래 학과</li></span>
+                    <span><li class="text-point">🏫 이런저런 대학교, <span class="color-text">요래저래</span> 학과</li></span>
                         <ul>
                             <li>코바늘로 뜨개질을 할 줄 압니다!</li>
                             <li>심지어 대바늘 까지 할 수 있습니다!</li>
                             <li>하루에 책 200쪽 읽을 수 있습니다</li>
                         </ul>
                         <br>
-                    <span class="bold"><li>📚 제법 멋진 더조은 학원</li></span>
+                    <span><li class="text-point">📚 제법 멋진 <span class="color-text">더조은 학원</span></li></span>
                         <ul>
                             <li>Spring 기반 프로젝트 - 쇼핑몰</li>
                             <li>Cloud 서비스를 이용한 배포</li>
@@ -194,14 +216,14 @@
                 <div class="maintitle">보유 기술</div>
                 <div class="mainlast">
                     <ul>
-                    <span class="bold"><li>프로그램 skill</li></span>
+                    <span><li class="text-point">💻 프로그램 skill</li></span>
                         <ul>
                             <li>Java 재밌어요. 열심히 해요.</li>
                             <li>오라클 기반 데이터 베이스</li>
                             <li>html와 css도 재밌어요</li>
                         </ul>
                         <br>
-                    <span class="bold"><li>차별화 된 지식과 skill</li></span>
+                    <span><li class="text-point">👩‍🔧 차별화 된 지식과 skill</li></span>
                         <ul>
                             <li>병원에서 일했어요</li>
                             <li>EMR, 연구등록, 기타 등등</li>
@@ -220,7 +242,7 @@
                         <th>수행 역할</th>
                     </tr>
                     <tr>
-                        <td class="cellth">1</td>
+                        <td>1</td>
                         <td>쇼핑몰 사이트</td>
                         <td>스프링</td>
                         <td>팀프로젝트</td>
@@ -228,7 +250,7 @@
                         <td>블라블라</td>
                     </tr>
                     <tr>
-                        <td class="cellth">2</td>
+                        <td>2</td>
                         <td>어플 만들기</td>
                         <td>리액트</td>
                         <td>개인 프로젝트</td>
@@ -238,7 +260,6 @@
                 </table>
             </div>
         </div>
-    </div>
     
 </body>
 </html>
