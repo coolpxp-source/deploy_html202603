@@ -10,9 +10,9 @@
             height: 900px;
             margin: 5px;
             background-color: rgb(255, 246, 251);
+            background:radial-gradient(circle at 70% 50%,pink, white);
             box-sizing: border-box;
-            box-shadow: 2px 2px 5px rgb(188, 158, 163);
-            /* float: left; */
+            /* position: relative; */
         }
         #leftbar{
             width: 300px;
@@ -21,6 +21,7 @@
             background-color: rgb(255, 191, 200);
             box-sizing: border-box;
             box-shadow: 2px 2px 5px rgb(223, 198, 202);
+            /* position: absolute; */
         }
         #imgbox{
             width: 200px;
@@ -70,9 +71,6 @@
             padding: 5px;
             position: relative;
             bottom: 900px;
-            /* border: 1px solid #fff1ca;
-            background-color: #fff1ca; */
-            /* border-radius: 20px; */
             box-sizing: border-box;
             margin: 30px 0px 30px 330px
         }
@@ -129,10 +127,22 @@
         .cellth{
             width: 30px;
         }
+        #time{
+            width: 100px;
+            border: 2px solid pink;
+            border-radius: 10%;
+            text-align: center;
+            background-color: #fff1ca;
+            display: inline-block;
+            position: absolute;
+            left: 910px;
+            
+        }
 
     </style>
 </head>
 <body>
+    <div id="time"></div>
     <div id="container">
         <div id="leftbar">
             <div id="imgbox">
@@ -225,3 +235,15 @@
     
 </body>
 </html>
+<script>
+    setInterval(()=>{
+        let datetime = new Date();
+        let obj = document.querySelector("#time");
+        // 초가 한자리가 될때 01... 이렇게 나오게 하기
+        let sec = datetime.getSeconds() < 10 ? "0" +datetime.getSeconds() : datetime.getSeconds()
+        let time = datetime.getHours() + " : "
+                    + datetime.getMinutes() + " : "
+                    + datetime.getSeconds();
+        obj.innerHTML = time;
+    },1000);
+</script>
