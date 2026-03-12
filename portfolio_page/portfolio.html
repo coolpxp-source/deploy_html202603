@@ -7,7 +7,7 @@
     <style>
         #container{
             width: 1000px;
-            height: 900px;
+            height: 950px;
             margin: 5px;
             background-color: rgb(255, 246, 251);
             background:radial-gradient(circle at 70% 50%,pink, white);
@@ -16,7 +16,7 @@
         }
         #leftbar{
             width: 300px;
-            height: 900px;
+            height: 950px;
             padding-top: 100px;
             background-color: rgb(255, 191, 200);
             box-sizing: border-box;
@@ -72,7 +72,8 @@
             position: relative;
             bottom: 900px;
             box-sizing: border-box;
-            margin: 30px 0px 30px 330px
+            margin-right: 30px ;
+            margin-left: 330px
         }
         #mainbox1{
             position: relative;
@@ -126,6 +127,7 @@
             text-align: center; /* 가운데 정렬 */
             margin-top: 5px;
             font-size: 15px;
+            background-color: #fff1ca;
         }
         #time{
             width: 100px;
@@ -136,6 +138,7 @@
             display: inline-block;
             position: absolute;
             left: 910px;
+            font-weight: bold;
         }
         #time-img{
             display: inline-block;
@@ -244,8 +247,9 @@
         let datetime = new Date();
         let obj = document.querySelector("#time");
         let second = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+        let minute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
         let time = datetime.getHours() + " : "
-                    + datetime.getMinutes() + " : "
+                    + minute + " : "
                     + second;
 
         obj.innerHTML = time;
