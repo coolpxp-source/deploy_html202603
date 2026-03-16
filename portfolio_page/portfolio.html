@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
+        #back-ground{
+            height: 960px;
+            background-image: url("../media/분홍색.jpg");
+            display: flex;
+            flex-direction: center;
+        }
         #container{
             width: 1000px;
             height: 950px;
-            margin: 5px;
-            background-color: rgb(255, 246, 251);
-            background:radial-gradient(circle at 70% 50%,pink, white);
+            margin: 5px auto;
+            background-color: #fcdde2;
+            background-image: url("../media/분홍색.jpg");
             box-sizing: border-box;
-            /* position: relative; */
-
+            position: relative;
         }
         #leftbar{
             width: 300px;
@@ -27,7 +34,7 @@
         #imgbox{
             width: 200px;
             height: 200px;
-            margin: 10px auto;
+            margin: 5px auto;
             border: 2px solid white;
             background-image: url("코리락쿠마.jpg");
             box-sizing: border-box;
@@ -40,12 +47,15 @@
             color: white;
             text-shadow: 1px 1px 3px gray;
             text-align: center;
+            padding: 10px;
             margin-top: 200px;
         }
         #cathpride{
             text-align: center;
             color: white;
+            font-size: 20px;
             font-weight: bold;
+            text-shadow: 1px 1px 3px gray;
             padding-top: 8px;
             padding-bottom: 8px;
         }
@@ -83,7 +93,8 @@
         .maintitle{
            font-size: 20px;
            font-weight: bold;
-           padding:0px 20px 5px 20px ;
+           margin: 5px;
+           padding:5px 20px 5px 20px ;
            border-left: 8px solid pink;
            background-color: #fff6fb;
            display: inline-block;
@@ -97,7 +108,6 @@
             background-color: #fff1ca;
             margin-top: 5px;
             margin-bottom: 30px;
-
         }
         .mainmiddle{
             width: 630px;
@@ -113,7 +123,7 @@
             font-weight: bold;
             background-color: pink;
             display: inline-block;
-            padding: 0px 10px;
+            padding: 2px 10px;
         }
         .bold-text{
             font-weight: bold;
@@ -143,7 +153,8 @@
         }
     
         #time{
-            width: 100px;
+            width: 120px;
+            height: 30px;
             border: 3px solid pink;
             border-radius: 10%;
             text-align: center;
@@ -151,119 +162,150 @@
             display: inline-block;
             position: absolute;
             top: 10px;
-            left: 879px;
+            left: 840px;
             font-weight: bold;
+            padding-top: 8px;
         }
         #title-emo{
             display: inline-block;
             position: absolute;
             top: 10px;
             left: 346px;
+            font-weight: bold;
+            font-size: 15px;
         }
-        #time-img{
-            display: inline-block;
+        #fix-box{
+            width: 200px;
+            height: 40px;
+            border: 2px solid rgb(255, 150, 167);
+            border-radius: 10px;
+            background-color: rgb(255, 150, 167);
             position: absolute;
-            top: 10px;
-            left: 854px;
+            left: 1000px;
+            top: 200px;
+            cursor: pointer;
+            font-size: 22px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding-top: 15px;
         }
-
     </style>
 </head>
 <body>
-    
-    <div id="container">
-        <div id="title-emo">🎀 좋은 하루 되세요 🎀</div>
-        <div id="time-img">⏰ </div><div id="time"></div>
-        <div id="leftbar">
-            <div id="imgbox">
-            <div id="textname">Hyejin Ahn</div>
-            <div id="cathpride">하는 만큼 보인다!</div>
-            <hr id="line">
-            <br>
-            <div class="subtext">🏡 Incheon, Korea</div>
-            <div class="subtext">📫 elotoll@naver.com</div>
-            <br>
-            <button id="button">🎁 프로젝트 보러가기 🎁</button>
+    <div id="app">
+        <div id="back-ground">
+            <div id="container">
+                <div id="fix-box">방명록 쓰기</div>
+                <div id="title-emo">🎀 좋은 하루 되세요 🎀</div>
+                <div id="time"></div>
+                <div id="leftbar">
+                    <div id="imgbox">
+                    <div id="textname">Hyejin Ahn</div>
+                    <div id="cathpride">하는 만큼 보인다!</div>
+                    <hr id="line">
+                    <br>
+                    <div class="subtext">🏡 Incheon, Korea</div>
+                    <div class="subtext">📫 elotoll@naver.com</div>
+                    <br>
+                    <button id="button" @click="fnAlter()">🎁 프로젝트 보러가기 🎁</button>
+                    </div>
+                </div>
+                <div id="maincontents">
+                    <div class="mainbox1"></div>
+                    <div class="maintitle">소개글</div>
+                    <div class="maintop">
+                        <ul>
+                        <li>저는 <span class="bold-text">이런 사람</span>입니다. 어쩌고 블라블라블라</li>
+                        <li>이런 <span class="bold-text">성향</span>의 사람이고요. 짱짱 좋은 설명글</li>
+                        <li>한 줄 더 들어갈 듯</li>
+                        </ul>
+                    </div>
+                    <div class="maintitle">Experience</div>
+                    <div class="mainmiddle">
+                        <ul>
+                        <span><li class="text-point">🏫 이런저런 대학교, <span class="color-text">요래저래</span> 학과</li></span>
+                            <ul>
+                                <li>코바늘로 뜨개질을 할 줄 압니다!</li>
+                                <li>심지어 대바늘 까지 할 수 있습니다!</li>
+                                <li>하루에 책 200쪽 읽을 수 있습니다</li>
+                            </ul>
+                            <br>
+                            <span><li class="text-point">📚 제법 멋진 <span class="color-text">더조은 학원</span></li></span>
+                            <ul>
+                                <li>Spring 기반 프로젝트 - 쇼핑몰</li>
+                                <li>Cloud 서비스를 이용한 배포</li>
+                            </ul>
+                        </ul>
+                        </div>
+                    <div class="maintitle">보유 기술</div>
+                    <div class="mainlast">
+                        <ul>
+                        <span><li class="text-point">💻 프로그램 skill</li></span>
+                            <ul>
+                                <li>Java 재밌어요. 열심히 해요.</li>
+                                <li>오라클 기반 데이터 베이스</li>
+                                <li>html와 css도 재밌어요</li>
+                            </ul>
+                            <br>
+                        <span><li class="text-point">👩‍🔧 차별화 된 지식과 skill</li></span>
+                            <ul>
+                                <li>병원에서 일했어요</li>
+                                <li>EMR, 연구등록, 기타 등등</li>
+                                <li>html와 css도 재밌어요</li>
+                            </ul>
+                        </ul>
+                        </div>
+                    <div class="maintitle">프로젝트/수행역할</div>
+                        <table>
+                            <tr>
+                                <th>NO</th>
+                                <th>프로젝트명</th>
+                                <th>사용 언어</th>
+                                <th>구분</th>
+                                <th>제작 기간</th>
+                                <th>수행 역할</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>쇼핑몰 사이트</td>
+                                <td>스프링</td>
+                                <td>팀프로젝트</td>
+                                <td>1개월</td>
+                                <td>블라블라</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>어플 만들기</td>
+                                <td>리액트</td>
+                                <td>개인 프로젝트</td>
+                                <td>1개월</td>
+                                <td>전부 다</td>
+                            </tr>
+                        </table>
+                </div>
             </div>
         </div>
-        <div id="maincontents">
-            <div class="mainbox1"></div>
-                <div class="maintitle">소개글</div>
-                <div class="maintop">
-                    <ul>
-                    <li>저는 <span class="bold-text">이런 사람</span>입니다. 어쩌고 블라블라블라</li>
-                    <li>이런 <span class="bold-text">성향</span>의 사람이고요. 짱짱 좋은 설명글</li>
-                    <li>한 줄 더 들어갈 듯</li>
-                    </ul>
-                </div>
-                <div class="maintitle">Experience</div>
-                <div class="mainmiddle">
-                    <ul>
-                    <span><li class="text-point">🏫 이런저런 대학교, <span class="color-text">요래저래</span> 학과</li></span>
-                        <ul>
-                            <li>코바늘로 뜨개질을 할 줄 압니다!</li>
-                            <li>심지어 대바늘 까지 할 수 있습니다!</li>
-                            <li>하루에 책 200쪽 읽을 수 있습니다</li>
-                        </ul>
-                        <br>
-                    <span><li class="text-point">📚 제법 멋진 <span class="color-text">더조은 학원</span></li></span>
-                        <ul>
-                            <li>Spring 기반 프로젝트 - 쇼핑몰</li>
-                            <li>Cloud 서비스를 이용한 배포</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="maintitle">보유 기술</div>
-                <div class="mainlast">
-                    <ul>
-                    <span><li class="text-point">💻 프로그램 skill</li></span>
-                        <ul>
-                            <li>Java 재밌어요. 열심히 해요.</li>
-                            <li>오라클 기반 데이터 베이스</li>
-                            <li>html와 css도 재밌어요</li>
-                        </ul>
-                        <br>
-                    <span><li class="text-point">👩‍🔧 차별화 된 지식과 skill</li></span>
-                        <ul>
-                            <li>병원에서 일했어요</li>
-                            <li>EMR, 연구등록, 기타 등등</li>
-                            <li>html와 css도 재밌어요</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="maintitle">프로젝트/수행역할</div>
-                <table>
-                    <tr>
-                        <th>NO</th>
-                        <th>프로젝트명</th>
-                        <th>사용 언어</th>
-                        <th>구분</th>
-                        <th>제작 기간</th>
-                        <th>수행 역할</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>쇼핑몰 사이트</td>
-                        <td>스프링</td>
-                        <td>팀프로젝트</td>
-                        <td>1개월</td>
-                        <td>블라블라</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>어플 만들기</td>
-                        <td>리액트</td>
-                        <td>개인 프로젝트</td>
-                        <td>1개월</td>
-                        <td>전부 다</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    
+    </div>
 </body>
 </html>
 <script>
+    document.addEventListener('mousemove', function(e) {
+    let star = document.createElement('div');
+    star.style.position = 'fixed';
+    star.style.left = e.clientX + 'px';
+    star.style.top = e.clientY + 'px';
+    star.style.width = '10px';
+    star.style.height = '10px';
+    star.style.borderRadius = '50%';
+    star.style.pointerEvents = 'none';
+    star.innerHTML = '💗'
+    document.body.appendChild(star);
+    setTimeout(function() {
+        star.remove();
+    }, 300);
+
+    });
     setInterval(()=>{
         let datetime = new Date();
         let obj = document.querySelector("#time");
@@ -275,4 +317,23 @@
 
         obj.innerHTML = time;
     }, 1000);
+
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수 - (key : value)
+            };
+        },
+        methods: {
+            // 함수(메소드) - (key : function())
+            fnAlter : function(){
+                alert("지금은 준비 중입니다~ 기대해주세요!");
+            }
+        }, // methods
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
+
+    app.mount('#app');
 </script>
