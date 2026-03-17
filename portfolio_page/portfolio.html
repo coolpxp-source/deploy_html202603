@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
         #back-ground{
-            height: 960px;
+            height: 1000px;
             background-image: url("../media/분홍색.jpg");
             display: flex;
             flex-direction: center;
@@ -24,22 +24,24 @@
         }
         #leftbar{
             width: 300px;
-            height: 950px;
+            height: 990px;
             padding-top: 100px;
             background-color: rgb(255, 191, 200);
             box-sizing: border-box;
             box-shadow: 2px 2px 5px rgb(223, 198, 202);
-            /* position: absolute; */
         }
         #imgbox{
             width: 200px;
             height: 200px;
             margin: 5px auto;
             border: 2px solid white;
-            background-image: url("코리락쿠마.jpg");
+            background-image: url("곰1.png");
             box-sizing: border-box;
             background-size: cover;
             border-radius: 50%;
+        }
+        #imgbox:hover{
+             background-image: url("곰2.jpg");
         }
         #textname{
             font-size: 32px; 
@@ -82,7 +84,7 @@
             height: 810px;
             padding: 5px;
             position: relative;
-            bottom: 900px;
+            bottom: 945px;
             box-sizing: border-box;
             margin-right: 30px ;
             margin-left: 330px
@@ -98,6 +100,10 @@
            border-left: 8px solid pink;
            background-color: #fff6fb;
            display: inline-block;
+        }
+        .maintitle:hover{
+            background-color: #ffd1d9;
+            color: white;
         }
         .maintop{
             width: 630px;
@@ -314,7 +320,6 @@
         let time = datetime.getHours() + " : "
                     + minute + " : "
                     + second;
-
         obj.innerHTML = time;
     }, 1000);
 
