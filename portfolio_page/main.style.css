@@ -1,0 +1,98 @@
+body{
+    background-image: url("../media/분홍색.jpg");
+    background-color: #fcdde2;
+}
+#container{
+    display: flex;
+    flex-direction: center;
+    position: relative;
+}
+.title{
+    font-size: 80px;
+    position: absolute;
+    color: white;
+    text-shadow: 2px 2px 5px palevioletred;
+    top: 300px;
+    left: 39%;
+}
+.sub-title{
+    position: absolute;
+    top: 500px;
+    left: 42%;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    transition: transform 1s ease ;
+}
+.sub-title:hover {
+    text-shadow: 2px 2px 2px palevioletred;
+    border-radius: 10px;
+    animation: pulse 1s ease-in-out;
+}
+.flower1{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 250px;
+    left:23%;
+    transition: transform 1s ease ;
+}
+.flower2{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 250px;
+    right:25%;
+    transition: transform 1s ease ;
+}
+.finger{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 550px;
+    left: 680px;
+    cursor: pointer;
+    transition: transform 1s ease ;
+}
+.rotate{
+    transform: rotate(0deg);
+}
+.rotate:hover{
+    transform:rotate(360deg)    
+}
+.rotate2{
+    transform:rotate(10deg) ;/* 회전-> 각도 사용 */
+}
+.rotate2:hover{
+    transform:rotate(45deg) ;
+}
+@keyframes popIn {
+     0%{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes pulse {
+    0%{
+    transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+        background-color: pink;
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.animate{
+        animation: popIn 1s ease-in-out;
+}
