@@ -216,7 +216,7 @@
         }
         .mainlast{
             width: 630px;
-            height: 220px;
+            height: 230px;
             font-size: 15px;
             border: 1px solid #fff1ca;
             border-radius: 20px;
@@ -257,4 +257,16 @@
             left: 346px;
             font-weight: bold;
             font-size: 15px;
+        }
+        @media (min-width: 600px) {
+            .music-player {
+                flex-direction: row; /* 가로로 배치 */
+                justify-content: space-between;
+            }
+        }
+        .music-player{
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 10px;
         }
