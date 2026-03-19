@@ -7,9 +7,11 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
-        #back-ground{
-            height: 1000px;
+        body{
             background-image: url("../media/분홍색.jpg");
+            background-color: #fcdde2;
+        }
+        #back-ground{
             display: flex;
             flex-direction: center;
         }
@@ -17,8 +19,6 @@
             width: 1000px;
             height: 950px;
             margin: 5px auto;
-            background-color: #fcdde2;
-            background-image: url("../media/분홍색.jpg");
             box-sizing: border-box;
             position: relative;
         }
@@ -43,6 +43,9 @@
         #imgbox:hover{
              background-image: url("곰2.jpg");
         }
+        #left-cnt{
+            position: relative;
+        }
         #textname{
             font-size: 32px; 
             font-weight: bold;
@@ -50,7 +53,6 @@
             text-shadow: 1px 1px 3px gray;
             text-align: center;
             padding: 10px;
-            margin-top: 200px;
         }
         #cathpride{
             text-align: center;
@@ -72,11 +74,32 @@
             font-size: 15px;
             background-color: #fff1ca;
             border-radius: 50px;
-            border: 1px solid white;
+            border: 1px solid rgb(255, 195, 205);
             cursor: pointer;
+            margin-left: 50px;
         }
         #button:hover{
             background-color: #d7cbaa;
+            box-shadow: 2px 2px 2px gray;
+        }
+        #godok{
+            width: 200px;
+            height: 40px;
+            border: 2px solid rgb(255, 210, 210);
+            border-radius: 10px;
+            background-color: rgb(255, 150, 167);
+            position: absolute;
+            cursor: pointer;
+            font-size: 22px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding-top: 10px;
+            margin-top: 15px;
+            margin-left: 50px;
+        }
+        #godok:hover{
+            background-color: #d98f9e;
             box-shadow: 2px 2px 2px gray;
         }
         #maincontents{
@@ -180,41 +203,27 @@
             font-weight: bold;
             font-size: 15px;
         }
-        #fix-box{
-            width: 200px;
-            height: 40px;
-            border: 2px solid rgb(255, 150, 167);
-            border-radius: 10px;
-            background-color: rgb(255, 150, 167);
-            position: absolute;
-            left: 1000px;
-            top: 200px;
-            cursor: pointer;
-            font-size: 22px;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            padding-top: 15px;
-        }
+        
     </style>
 </head>
 <body>
     <div id="app">
         <div id="back-ground">
             <div id="container">
-                <div id="fix-box">방명록 쓰기</div>
                 <div id="title-emo">🎀 좋은 하루 되세요 🎀</div>
                 <div id="time"></div>
                 <div id="leftbar">
-                    <div id="imgbox">
-                    <div id="textname">Hyejin Ahn</div>
-                    <div id="cathpride">하는 만큼 보인다!</div>
-                    <hr id="line">
-                    <br>
-                    <div class="subtext">🏡 Incheon, Korea</div>
-                    <div class="subtext">📫 elotoll@naver.com</div>
-                    <br>
-                    <button id="button" @click="fnAlter()">🎁 프로젝트 보러가기 🎁</button>
+                    <div id="imgbox"> </div>
+                    <div id="left-cnt">
+                        <div id="textname">Hyejin Ahn</div>
+                        <div id="cathpride">:: 하는 만큼 보인다! ::</div>
+                        <hr id="line">
+                        <br>
+                        <div class="subtext">🏡 Incheon, Korea</div>
+                        <div class="subtext">📫 elotoll@naver.com</div>
+                        <br>
+                        <button id="button" @click="fnAlter()">🎁 프로젝트 보러가기 🎁</button>
+                        <div id="godok">구독하기</div>
                     </div>
                 </div>
                 <div id="maincontents">
