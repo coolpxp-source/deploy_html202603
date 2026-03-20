@@ -56,6 +56,14 @@ body{
     cursor: pointer;
     transition: transform 1s ease ;
 }
+.balloon1{
+    position: absolute;
+    left: 10px;
+}
+.balloon2{
+    position: absolute;
+    right: 10px;
+}
 .rotate{
     transform: rotate(0deg);
 }
@@ -93,6 +101,18 @@ body{
         transform: scale(1);
     }
 }
+@keyframes zigzag {
+    0%{
+        transform: translateY(300px);
+    }
+    100%{
+        transform: translateY(-100px);
+    }
+
+}
 .animate{
         animation: popIn 1s ease-in-out;
+}
+.animate2{
+        animation: zigzag 3s ease-in-out infinite; /* 옵션 주기 가능 : 무한반복 등  */
 }
